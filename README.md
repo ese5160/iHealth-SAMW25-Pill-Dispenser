@@ -10,7 +10,7 @@
 
 ## 1. Video Presentation
 
-<video src="images/Presentation.mp4" width="384" height="216" controls></video>
+Please check this [link](https://drive.google.com/file/d/1DVOrOgsghanE2W0uzx0UAIseG3z_vw1k/view?usp=share_link)
 
 ## 2. Project Summary
 
