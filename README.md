@@ -5,10 +5,12 @@
     * Team Number: 11
     * Team Name: iHealth
     * Team Members: Zed Liu, Jiazhen Zhang
-    * Github Repository URL: 
+    * Github Repository URL:
     * Description of test hardware: laptop, Project Prototype
 
 ## 1. Video Presentation
+
+<video src="images/Presentation.mp4" width="384" height="216" controls></video>
 
 ## 2. Project Summary
 
@@ -186,7 +188,9 @@ In the context of a course like ESE5160, which presumably focuses on embedded sy
 3. **HRS 03 (Optical Sensors)**: Did not met. the collector and emitter pins were mistakenly swapped in the schematics.
 4. **HRS 04 (RTC Module PCF8563)**: Did not met. We used the integrated RTC module in SAMW25 chip instead.
 5. **HRS 05 (LCD Screen)**: Met. The specified LCD screen displayed information correctly and with the required color depth. Screen functionality was tested through display tests of various images and data.
+![LCD](images/LCD.jpg)
 6. **HRS 06 (Micro servo)**: Met. The servo's speed and angle of operation were verified through mechanical tests measuring the time and degree of movement.
+![servo](images/servo.gif)
 7. **HRS 07 (Power Supply Units)**: Partially met. While the buck converter achieved the desired efficiency, the boost converter fell short by approximately 3%. Efficiency testing involved measuring input and output power under different load conditions.
 ![Power](images/Power.png)
 8. **HRS 08 (Passive Buzzer)**: Did not met. The Passive buzzer in ESE vualt has a wrong footpring, leading to integration failures.
@@ -197,17 +201,23 @@ In the context of a course like ESE5160, which presumably focuses on embedded sy
 ### Software Requirements (SRS) Review
 
 1. **SRS 01 (Temperature-Humidity Sensor Interface)**: Met. The software correctly interfaced with the DHT22 sensor, and data logging accuracy was confirmed through simulated environmental changes.
+![DHT20](images/DHT20.png)
 2. **SRS 02 (GUI Medication Scheduling)**: Met. The GUI allowed for the setting and modification of medication schedules. This functionality was tested remotely and changes were accurately reflected in the microcontroller's operation.
 ![GUI](images/GUI.png)
-3. **SRS 03 (Notification Alerts)**: Partially met. Since the failure in buzzer integration, when hitting the schedule time, only LCD screen shows warning information. The buzzer won't works.
-4. **SRS 04 (Wi-Fi Controller Communication)**: Met. Remote monitoring and configuration changes were successfully implemented and verified through network communication tests.
-5. **SRS 05 (Dispensing Activity Logging)**: Did not met. In the end, we abandon this functionality of storaging schedule in SD card. Instead, we store the schedule in the backend of the server.
-6. **SRS 06 (RTC Synchronization)**: Met. The RTC was accurately synchronized with the system, confirmed through cross-verification tests with the system time.
-7. **SRS 07 (Emergency Stop Feature)**: Did not met. Instead, we changed the function into controlling the LCD ON/OFF state in the website.
-8. **SRS 08 (LED Indicator Management)**: Met. LED responses to system states and alerts were correctly implemented and verified through scenario-based testing.
-9. **SRS 09 (On/Off Button Management)**: Met. The power control mechanism reliably detected button presses, with consistent operation confirmed through repetitive activation and deactivation tests.
+1. **SRS 03 (Notification Alerts)**: Partially met. Since the failure in buzzer integration, when hitting the schedule time, only LCD screen shows warning information. The buzzer won't works.
+2. **SRS 04 (Wi-Fi Controller Communication)**: Met. Remote monitoring and configuration changes were successfully implemented and verified through network communication tests.
+[Wifi](images/wifi_communication.gif)
+1. **SRS 05 (Dispensing Activity Logging)**: Did not met. In the end, we abandon this functionality of storaging schedule in SD card. Instead, we store the schedule in the backend of the server.
+2. **SRS 06 (RTC Synchronization)**: Met. The RTC was accurately synchronized with the system, confirmed through cross-verification tests with the system time.
+3. **SRS 07 (Emergency Stop Feature)**: Did not met. Instead, we changed the function into controlling the LCD ON/OFF state in the website.
+4. **SRS 08 (LED Indicator Management)**: Met. LED responses to system states and alerts were correctly implemented and verified through scenario-based testing.
+5.  **SRS 09 (On/Off Button Management)**: Met. The power control mechanism reliably detected button presses, with consistent operation confirmed through repetitive activation and deactivation tests.
 
 ## 4. Project Photos & Screenshots
+
+### Prototype
+
+![Proto](images/Proto.png)
 
 ### PCB Photos
 
