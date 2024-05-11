@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Markdown Display</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div id="markdown-container">Loading...</div>
+
+    <script>
+        // Fetch the Markdown file
+        fetch('readme.md')
+            .then(response => response.text())
+            .then(text => {document.getElementById('markdown-container').innerHTML = marked(text);})
+            .catch(err => console.error('Error loading the Markdown file:', err));
+    </script>
+</body>
+</html>
