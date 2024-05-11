@@ -1,4 +1,37 @@
-<p><a href="https://classroom.github.com/a/kzkUPShx"><img alt="Review Assignment Due Date" src="https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg" /></a></p>
+<html><head><style>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        body { 
+            font-family: 'Arial', sans-serif; 
+            background-color: #f4f4f9; 
+            color: #333; 
+            max-width: 50%;
+            padding: 20px;
+            overflow-wrap: break-word;
+        }
+        img { 
+            width: 100%;
+            display: block;
+            margin: 20px auto; 
+            border-radius: 8px;
+        }
+        h1, h2, h3, p {
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+        p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+    </style>
+    </style></head><body>
 <h1>a14g-final-submission</h1>
 <pre><code>* Team Number: 11
 * Team Name: iHealth
@@ -174,11 +207,11 @@
 <li><strong>HRS 03 (Optical Sensors)</strong>: Did not met. the collector and emitter pins were mistakenly swapped in the schematics.</li>
 <li><strong>HRS 04 (RTC Module PCF8563)</strong>: Did not met. We used the integrated RTC module in SAMW25 chip instead.</li>
 <li><strong>HRS 05 (LCD Screen)</strong>: Met. The specified LCD screen displayed information correctly and with the required color depth. Screen functionality was tested through display tests of various images and data.
-<img alt="LCD" src="images/LCD.jpg" /></li>
+<img alt="LCD" src="images/LCD.jpg"/></li>
 <li><strong>HRS 06 (Micro servo)</strong>: Met. The servo's speed and angle of operation were verified through mechanical tests measuring the time and degree of movement.
-<img alt="servo" src="images/servo.gif" /></li>
+<img alt="servo" src="images/servo.gif"/></li>
 <li><strong>HRS 07 (Power Supply Units)</strong>: Partially met. While the buck converter achieved the desired efficiency, the boost converter fell short by approximately 3%. Efficiency testing involved measuring input and output power under different load conditions.
-<img alt="Power" src="images/Power.png" /></li>
+<img alt="Power" src="images/Power.png"/></li>
 <li><strong>HRS 08 (Passive Buzzer)</strong>: Did not met. The Passive buzzer in ESE vualt has a wrong footpring, leading to integration failures.</li>
 <li><strong>HRS 09 (Wi-Fi Controller)</strong>: Met. The WINC1500 supported the specified data rates and demonstrated reliable connectivity over 50 meters in open space tests.</li>
 <li><strong>HRS 10 (LED indicators)</strong>: Met. LED indicators functioned within the visible spectrum and maintained low power consumption, tested through power measurement and visual verification.</li>
@@ -187,9 +220,9 @@
 <h3>Software Requirements (SRS) Review</h3>
 <ol>
 <li><strong>SRS 01 (Temperature-Humidity Sensor Interface)</strong>: Met. The software correctly interfaced with the DHT22 sensor, and data logging accuracy was confirmed through simulated environmental changes.
-<img alt="DHT20" src="images/DHT20.png" /></li>
+<img alt="DHT20" src="images/DHT20.png"/></li>
 <li><strong>SRS 02 (GUI Medication Scheduling)</strong>: Met. The GUI allowed for the setting and modification of medication schedules. This functionality was tested remotely and changes were accurately reflected in the microcontroller's operation.
-<img alt="GUI" src="images/GUI.png" /></li>
+<img alt="GUI" src="images/GUI.png"/></li>
 <li><strong>SRS 03 (Notification Alerts)</strong>: Partially met. Since the failure in buzzer integration, when hitting the schedule time, only LCD screen shows warning information. The buzzer won't works.</li>
 <li><strong>SRS 04 (Wi-Fi Controller Communication)</strong>: Met. Remote monitoring and configuration changes were successfully implemented and verified through network communication tests.
 <a href="images/wifi_communication.gif">Wifi</a></li>
@@ -201,14 +234,14 @@
 </ol>
 <h2>4. Project Photos &amp; Screenshots</h2>
 <h3>Prototype</h3>
-<p><img alt="Proto" src="images/Proto.png" /></p>
+<p><img alt="Proto" src="images/Proto.png"/></p>
 <h3>PCB Photos</h3>
-<p><img alt="PCB" src="images/PCB_Photo.png" /></p>
+<p><img alt="PCB" src="images/PCB_Photo.png"/></p>
 <h3>Thermal Camera</h3>
-<p><img alt="Thermal" src="images/Thermal.jpeg" /></p>
+<p><img alt="Thermal" src="images/Thermal.jpeg"/></p>
 <h3>Altium Designer</h3>
-<p><img alt="Altium" src="images/Altium_Photo.png" /></p>
+<p><img alt="Altium" src="images/Altium_Photo.png"/></p>
 <h3>Node-Red</h3>
-<p><img alt="Node-red" src="images/Node_Photo.png" /></p>
+<p><img alt="Node-red" src="images/Node_Photo.png"/></p>
 <h3>Block Diagram</h3>
-<p><img alt="Diagram" src="images/Diagram.png" /></p>
+<p><img alt="Diagram" src="images/Diagram.png"/></p></body></html>
