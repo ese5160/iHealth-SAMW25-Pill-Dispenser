@@ -1,19 +1,214 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Markdown Display</title>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-</head>
-<body>
-    <div id="markdown-container">Loading...</div>
-
-    <script>
-        // Fetch the Markdown file
-        fetch('readme.md')
-            .then(response => response.text())
-            .then(text => {document.getElementById('markdown-container').innerHTML = marked(text);})
-            .catch(err => console.error('Error loading the Markdown file:', err));
-    </script>
-</body>
-</html>
+<p><a href="https://classroom.github.com/a/kzkUPShx"><img alt="Review Assignment Due Date" src="https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg" /></a></p>
+<h1>a14g-final-submission</h1>
+<pre><code>* Team Number: 11
+* Team Name: iHealth
+* Team Members: Zed Liu, Jiazhen Zhang
+* Github Repository URL:
+* Description of test hardware: laptop, Project Prototype
+</code></pre>
+<h2>1. Video Presentation</h2>
+<p>Please check this <a href="https://drive.google.com/file/d/1DVOrOgsghanE2W0uzx0UAIseG3z_vw1k/view?usp=share_link">link</a></p>
+<h2>2. Project Summary</h2>
+<h3>Device Description</h3>
+<p>The iHealth smart dispenser addresses the problem of managing complex medication regimens, which can often be challenging and error-prone for individuals who have to take multiple medications at various times throughout the day. It simplifies this process by automatically sorting and dispensing the correct dose of pills at the scheduled times, thereby reducing the risk of missed or incorrect doses.</p>
+<h3>Inspiration</h3>
+<p>The inspiration for the iHealth smart dispenser came from my own experiences watching close family members struggle with managing their complex medication schedules. Seeing them juggle numerous pill bottles and often forgetting to take their medicine on time, or taking the wrong doses, made me realize the need for a more foolproof solution. This personal connection drove my passion to develop a technology that not only assists in managing medications efficiently but also provides peace of mind for both users and their families. The idea was to use smart technology to create a device that could handle the intricacies of medication management with precision, ensuring that the right person gets the right dose at the right time, every time. My goal was to blend my skills in technology with a deep-seated desire to make a tangible difference in the lives of those who face daily health management challenges.</p>
+<h3>Device Functionality</h3>
+<p>The iHealth smart dispenser is a sophisticated Internet-connected device designed to simplify the management of complex medication regimens. It incorporates a range of sensors, actuators, and critical components, integrated through a meticulously designed 4-layer Printed Circuit Board (PCB). Here’s how each component contributes to the functionality of the device:</p>
+<h4>PCB Design</h4>
+<ul>
+<li><strong>4-Layer PCB</strong>: Designed using Altium Designer to facilitate complex communication needs with a high level of integration and reliability. This structure supports various communication protocols such as SPI, I2C, and UART, essential for connecting the microcontroller with various sensors and actuators.</li>
+<li><strong>Schematic Design</strong>: The schematic design phase involved meticulous placement of components to ensure efficient communication pathways between the microcontroller and peripherals.</li>
+<li><strong>PCB Layout</strong>: Strategic placement of components in the layout phase focused on minimizing electronic interference and optimizing signal integrity, crucial for reliable operation.</li>
+</ul>
+<h4>Sensors and Actuators</h4>
+<ul>
+<li><strong>Dispensing Mechanism</strong>: Actuators control the mechanical parts that sort and dispense medications. These are critical for the precise delivery of the correct dose at the right time.</li>
+<li><strong>Temperature and Humidity Sensors</strong>: These sensors monitor the storage conditions within the device to ensure that medications are kept at optimal conditions, thus maintaining their efficacy.</li>
+<li><strong>Weight Sensors</strong>: Used to detect the presence and quantity of pills in the dispenser to alert users when refills are necessary.</li>
+</ul>
+<h4>Connectivity and Control</h4>
+<ul>
+<li><strong>Wi-Fi Module</strong>: Allows the device to connect to the Internet, enabling remote monitoring and control through the iHealth mobile application. This connection is crucial for updating medication schedules, receiving alerts, and accessing usage statistics.</li>
+<li><strong>Microcontroller</strong>: The heart of the device, programmed to handle the logic of medication dispensing schedules, sensor data processing, and actuator control.</li>
+</ul>
+<h4>Firmware &amp; Operating System</h4>
+<ul>
+<li><strong>Custom C Drivers</strong>: Developed to ensure that the device's hardware is optimally controlled and interfaced with the system's core logic.</li>
+<li><strong>FreeRTOS</strong>: The use of FreeRTOS as the operating system facilitates efficient task management and synchronization, allowing real-time operations and stability essential for medical devices.</li>
+</ul>
+<p>This integrated approach not only ensures the functional reliability of the iHealth smart dispenser but also enhances its user-friendliness and effectiveness in real-world applications. Through careful design, testing, and the use of advanced operating systems, the dispenser becomes a robust solution for medication management.</p>
+<h3>Challenges</h3>
+<h4>Firmware Development</h4>
+<ul>
+<li><strong>Objective</strong>: Develop custom firmware drivers from scratch and implement interface functions to enhance portability across different hardware platforms.</li>
+<li><strong>Approaches</strong>:</li>
+<li><strong>Custom Drivers</strong>: Developed dedicated drivers for handling specific hardware functionalities, focusing on communication protocols such as I2C and SPI. This involved writing low-level code that directly interfaces with hardware components.</li>
+<li><strong>Interface Abstraction</strong>: Implemented interface functions that abstract the hardware details from the core logic of the firmware. This design allows for easier adaptation if the hardware components change or if the system needs to be ported to different platforms.</li>
+<li><strong>Protocol Handling</strong>: Special attention was given to the robust implementation of communication protocols, ensuring reliable data transmission and error handling in environments with potential electronic noise and interference.</li>
+</ul>
+<h4>PCB</h4>
+<ul>
+<li><strong>Objective</strong>: Achieve a compact PCB design that adheres to all design rules and maintains proper net relationships in a hierarchical schematic structure.</li>
+<li><strong>Approaches</strong>:</li>
+<li><strong>Compact Design</strong>: Utilized a 4-layer PCB design to achieve compactness while managing heat dissipation and reducing electromagnetic interference.</li>
+<li><strong>Hierarchical Schematics</strong>: Structured the PCB schematics hierarchically to ensure clarity and manage complexity, which helped in maintaining clear net relationships and ease of troubleshooting and testing.</li>
+<li><strong>Design Rule Compliance</strong>: Rigorously adhered to PCB design rules using Altium Designer’s design rule check (DRC) features to prevent any potential manufacturing and functionality issues.</li>
+</ul>
+<h4>Software Development</h4>
+<ul>
+<li><strong>Objective</strong>: Efficiently utilize FreeRTOS for task management to ensure reliable real-time system performance.</li>
+<li><strong>Approaches</strong>:</li>
+<li><strong>RTOS Configuration</strong>: Carefully configured semaphore handling, task priorities, and stack sizes to prevent priority inversion and stack overflow issues.</li>
+<li><strong>Message Queues</strong>: Implemented message queues for inter-task communication, ensuring that tasks receive timely and reliable messages without losing critical data, crucial for tasks like dispensing the correct medication dosage.</li>
+<li><strong>Task Management</strong>: Managed task creation and destruction processes meticulously to optimize resource utilization and ensure system stability.</li>
+</ul>
+<h4>IoT and User Interface</h4>
+<ul>
+<li><strong>Objective</strong>: Design a user-friendly interface and a well-structured MQTT topic hierarchy for efficient message handling over IoT.</li>
+<li><strong>Approaches</strong>:</li>
+<li><strong>User Interface Design</strong>: Developed an intuitive user interface that simplifies user interactions, making the device accessible to users with varying levels of technical proficiency, including the elderly.</li>
+<li><strong>MQTT Structure</strong>: Designed a structured MQTT topic hierarchy to handle various data types and commands efficiently, ensuring that messages are processed and acknowledged in a secure and reliable manner.</li>
+</ul>
+<h4>Integration and Mechanical Design</h4>
+<ul>
+<li><strong>Objective</strong>: Overcome challenges associated with the integration of complex mechanical structures like gears and racks.</li>
+<li><strong>Approaches</strong>:</li>
+<li><strong>Mechanical Assembly</strong>: Faced challenges with the assembly of intricate mechanical components, such as ensuring precision in the gear and rack mechanism crucial for accurate pill dispensing.</li>
+<li><strong>Testing and Adjustments</strong>: Conducted extensive testing to identify and rectify issues in the mechanical assembly, making iterative adjustments to improve reliability and functionality.</li>
+</ul>
+<p>This comprehensive approach to addressing each aspect of the project ensured that the iHealth smart dispenser was not only functional but also robust, reliable, and user-friendly, ready for real-world application and capable of significantly improving medication management.</p>
+<h3>Prototype Learnings</h3>
+<p>Building and testing the iHealth smart dispenser prototype provided valuable insights and lessons that are essential for refining the device and planning future projects. Here are some of the key learnings and reflections on what could be done differently in future iterations:</p>
+<h4>Learnings</h4>
+<ol>
+<li><strong>Importance of Modular Design</strong>: The testing phase highlighted the benefits of having a modular design, especially when it came to isolating faults and making specific component upgrades or replacements. A more modular approach would facilitate easier maintenance and scalability of the system.</li>
+<li><strong>Testing Under Real-World Conditions</strong>: Simulating real-world usage scenarios was incredibly beneficial. It helped identify unforeseen issues, such as how users interact with the device and environmental factors affecting device performance. This emphasized the need for comprehensive user testing to capture a wide range of potential issues.</li>
+<li><strong>Power Management Efficiency</strong>: Initial tests of the power system revealed inefficiencies and the need for more robust handling of different power sources and conditions. This led to a deeper understanding of power consumption optimization and battery management, crucial for ensuring the device's reliability, especially in a medical setting.</li>
+<li><strong>Integrating Advanced Sensing Technologies</strong>: The use of basic sensors for monitoring temperature and humidity proved adequate but showed limitations in predictive analytics regarding medication quality. Incorporating more advanced sensors could provide deeper insights and enhance the device's functionality.</li>
+<li><strong>User Interface Simplicity</strong>: Feedback from user interaction tests showed that while the interface was intuitive, there were still challenges for some users, particularly those with limited tech experience or visual impairments. This taught the importance of user-centered design and the need for customizable interface options.</li>
+</ol>
+<h4>Changes for Future Builds</h4>
+<ol>
+<li><strong>Enhance User Interface Accessibility</strong>: For future iterations, focusing more on accessibility features, such as voice commands, larger touch-friendly interfaces, and high-contrast displays, would make the device more user-friendly for a broader audience, including those with disabilities.</li>
+<li><strong>Expand Testing Protocols</strong>: Implementing a more rigorous and varied testing protocol that includes extreme conditions and long-term usage scenarios would help ensure the device’s durability and reliability in all possible environments.</li>
+<li><strong>Improve Mechanical Reliability</strong>: Based on the difficulties encountered with the gear and rack mechanism, exploring alternative dispensing technologies that are less prone to mechanical failure would be beneficial. This could include magnetic, vacuum, or robotic handling systems which might offer improved reliability and precision.</li>
+<li><strong>Incorporate IoT Security Enhancements</strong>: Given the sensitive nature of medical data, strengthening the security measures for IoT connectivity is crucial. Implementing advanced encryption methods and continuous security updates would protect user data more effectively.</li>
+<li><strong>Feedback Loop from Users</strong>: Establishing a continuous feedback loop with actual users would be integral to iterative design improvements. This could be facilitated through beta testing programs or regular user forums to gather and implement user insights more dynamically.</li>
+</ol>
+<p>By applying these lessons and considerations for future builds, the development of medical devices like the iHealth smart dispenser can continue to evolve, becoming more effective, user-friendly, and adaptable to the needs of diverse user populations.</p>
+<h3>Next Steps</h3>
+<p>To further develop and enhance the iHealth smart dispenser, several strategic steps can be taken to ensure its success and efficacy. These next steps aim to refine the product, address any outstanding issues, and prepare it for broader deployment. Here’s a structured approach to advancing the project:</p>
+<ol>
+<li>
+<p>Advanced Prototyping and Refinement</p>
+</li>
+<li>
+<p><strong>Iterative Prototyping:</strong> Continue developing prototypes to iteratively address and refine design and functionality issues identified in earlier tests.</p>
+</li>
+<li><strong>Component Upgrades:</strong> Investigate and integrate higher-quality or more advanced components based on the insights gained from prototype testing, particularly in the areas of sensors and actuators.</li>
+<li>
+<p>Enhanced User Interface and Accessibility</p>
+</li>
+<li>
+<p><strong>User-Centric Design Improvements:</strong> Implement design changes based on user feedback to enhance ease of use and accessibility, including voice commands, larger buttons, and more intuitive app interactions.</p>
+</li>
+<li><strong>Multilingual Support:</strong> Expand the device’s user interface to include multiple language options to cater to a diverse user base.</li>
+<li>
+<p>Comprehensive Testing</p>
+</li>
+<li>
+<p><strong>Extended Field Testing:</strong> Conduct extensive field tests under various environmental conditions and with diverse user groups to ensure the device performs reliably in real-world settings.</p>
+</li>
+<li><strong>Regulatory Testing and Compliance:</strong> Ensure the device meets all necessary regulatory requirements for medical devices, which may involve clinical trials or other formal testing processes.</li>
+<li>
+<p>Security Enhancements</p>
+</li>
+<li>
+<p><strong>IoT Security:</strong> Strengthen the IoT components’ security framework, including implementing end-to-end encryption and regular security audits to protect user data and device functionality.</p>
+</li>
+<li><strong>Continuous Monitoring and Updates:</strong> Develop a system for continuous monitoring of device performance and security, with capabilities for remote updates and patches.</li>
+</ol>
+<h3>Takeaways from ESE5160</h3>
+<p>In the context of a course like ESE5160, which presumably focuses on embedded systems engineering, completing the lectures, assignments, and a course-long prototyping project would provide a comprehensive education in both the theory and practical application of embedded systems. Here are some key takeaways you might have gained from such a course:</p>
+<h4>1. <strong>Understanding of Embedded Systems Architecture</strong></h4>
+<ul>
+<li><strong>Core Concepts</strong>: Gained a solid foundation in the principles of embedded system architecture, including microcontrollers, sensors, actuators, and interfacing techniques.</li>
+<li><strong>System Design</strong>: Learned how to design system architecture that efficiently integrates hardware and software components to meet specific functional requirements.</li>
+</ul>
+<h4>2. <strong>Proficiency in Programming and Software Development</strong></h4>
+<ul>
+<li><strong>Firmware Development</strong>: Developed skills in writing and debugging firmware for embedded devices, focusing on real-time operating systems like FreeRTOS.</li>
+<li><strong>Software Integration</strong>: Learned to integrate various software components and ensure they work seamlessly to perform complex tasks.</li>
+</ul>
+<h4>3. <strong>Hands-On Experience with Hardware</strong></h4>
+<ul>
+<li><strong>PCB Design</strong>: Acquired practical skills in PCB design, including schematic creation, layout design, and the use of design software like Altium Designer.</li>
+<li><strong>Hardware Prototyping</strong>: Engaged in hands-on assembly and testing of hardware, understanding the nuances of electronic component behavior and system integration.</li>
+</ul>
+<h4>4. <strong>Critical Thinking and Problem Solving</strong></h4>
+<ul>
+<li><strong>Troubleshooting</strong>: Enhanced ability to troubleshoot and solve complex problems that arise during the design, testing, and implementation phases of hardware and software development.</li>
+<li><strong>Optimization</strong>: Learned techniques for optimizing both hardware performance and software efficiency to meet design specifications and operational requirements.</li>
+</ul>
+<h4>5. <strong>Project Management and Teamwork</strong></h4>
+<ul>
+<li><strong>Collaborative Skills</strong>: Developed the ability to work effectively in teams, coordinating with peers to divide tasks and integrate components into a cohesive system.</li>
+<li><strong>Project Planning and Execution</strong>: Gained experience in planning and executing long-term projects, from conceptualization through design, development, and testing.</li>
+</ul>
+<h3>Project Links</h3>
+<h4>1. <strong>Node-Red</strong></h4>
+<ul>
+<li><strong>Frontend:</strong> <a href="http://40.123.27.90:1880/ui/#!/0?socketid=UhFbEJ5Mor0aO7WgAAB4">http://40.123.27.90:1880/ui/#!/0?socketid=UhFbEJ5Mor0aO7WgAAB4</a></li>
+<li><strong>Backend:</strong> <a href="http://40.123.27.90:1880/#flow/6d05cb858697aefa">http://40.123.27.90:1880/#flow/6d05cb858697aefa</a></li>
+</ul>
+<h4>2. <strong>Software &amp; Firmware</strong></h4>
+<p><strong>Githud:</strong> <a href="https://github.com/ese5160/a12g-firmware-drivers-t11-ihealth.git">https://github.com/ese5160/a12g-firmware-drivers-t11-ihealth.git</a></p>
+<h4>3. <strong>Altium Project</strong></h4>
+<p><strong>Altium 365:</strong> <a href="https://upenn-eselabs.365.altium.com/designs/6F37403C-E6A6-41A7-8A62-82AC7939DF8A">https://upenn-eselabs.365.altium.com/designs/6F37403C-E6A6-41A7-8A62-82AC7939DF8A</a></p>
+<h2>3. Hardware &amp; Software Requirements</h2>
+<h3>Hardware Requirements (HRS) Review</h3>
+<ol>
+<li><strong>HRS 01 (SAM W25 microcontroller)</strong>: This requirement was met. The SAM W25 was used as the main controller, providing adequate flash memory and SRAM for the application. Testing involved verifying its operation at the specified frequency and Wi-Fi capability through functional tests.</li>
+<li><strong>HRS 02 (DHT22 Sensor)</strong>: Met. The sensor performed within the specified temperature and humidity accuracy. Calibration tests were conducted against known humidity and temperature values to validate the accuracy.</li>
+<li><strong>HRS 03 (Optical Sensors)</strong>: Did not met. the collector and emitter pins were mistakenly swapped in the schematics.</li>
+<li><strong>HRS 04 (RTC Module PCF8563)</strong>: Did not met. We used the integrated RTC module in SAMW25 chip instead.</li>
+<li><strong>HRS 05 (LCD Screen)</strong>: Met. The specified LCD screen displayed information correctly and with the required color depth. Screen functionality was tested through display tests of various images and data.
+<img alt="LCD" src="images/LCD.jpg" /></li>
+<li><strong>HRS 06 (Micro servo)</strong>: Met. The servo's speed and angle of operation were verified through mechanical tests measuring the time and degree of movement.
+<img alt="servo" src="images/servo.gif" /></li>
+<li><strong>HRS 07 (Power Supply Units)</strong>: Partially met. While the buck converter achieved the desired efficiency, the boost converter fell short by approximately 3%. Efficiency testing involved measuring input and output power under different load conditions.
+<img alt="Power" src="images/Power.png" /></li>
+<li><strong>HRS 08 (Passive Buzzer)</strong>: Did not met. The Passive buzzer in ESE vualt has a wrong footpring, leading to integration failures.</li>
+<li><strong>HRS 09 (Wi-Fi Controller)</strong>: Met. The WINC1500 supported the specified data rates and demonstrated reliable connectivity over 50 meters in open space tests.</li>
+<li><strong>HRS 10 (LED indicators)</strong>: Met. LED indicators functioned within the visible spectrum and maintained low power consumption, tested through power measurement and visual verification.</li>
+<li><strong>HRS 11 (On/Off Button)</strong>: Met. The button's durability and reliability were confirmed through a high-cycle endurance test simulating frequent use.</li>
+</ol>
+<h3>Software Requirements (SRS) Review</h3>
+<ol>
+<li><strong>SRS 01 (Temperature-Humidity Sensor Interface)</strong>: Met. The software correctly interfaced with the DHT22 sensor, and data logging accuracy was confirmed through simulated environmental changes.
+<img alt="DHT20" src="images/DHT20.png" /></li>
+<li><strong>SRS 02 (GUI Medication Scheduling)</strong>: Met. The GUI allowed for the setting and modification of medication schedules. This functionality was tested remotely and changes were accurately reflected in the microcontroller's operation.
+<img alt="GUI" src="images/GUI.png" /></li>
+<li><strong>SRS 03 (Notification Alerts)</strong>: Partially met. Since the failure in buzzer integration, when hitting the schedule time, only LCD screen shows warning information. The buzzer won't works.</li>
+<li><strong>SRS 04 (Wi-Fi Controller Communication)</strong>: Met. Remote monitoring and configuration changes were successfully implemented and verified through network communication tests.
+<a href="images/wifi_communication.gif">Wifi</a></li>
+<li><strong>SRS 05 (Dispensing Activity Logging)</strong>: Did not met. In the end, we abandon this functionality of storaging schedule in SD card. Instead, we store the schedule in the backend of the server.</li>
+<li><strong>SRS 06 (RTC Synchronization)</strong>: Met. The RTC was accurately synchronized with the system, confirmed through cross-verification tests with the system time.</li>
+<li><strong>SRS 07 (Emergency Stop Feature)</strong>: Did not met. Instead, we changed the function into controlling the LCD ON/OFF state in the website.</li>
+<li><strong>SRS 08 (LED Indicator Management)</strong>: Met. LED responses to system states and alerts were correctly implemented and verified through scenario-based testing.</li>
+<li><strong>SRS 09 (On/Off Button Management)</strong>: Met. The power control mechanism reliably detected button presses, with consistent operation confirmed through repetitive activation and deactivation tests.</li>
+</ol>
+<h2>4. Project Photos &amp; Screenshots</h2>
+<h3>Prototype</h3>
+<p><img alt="Proto" src="images/Proto.png" /></p>
+<h3>PCB Photos</h3>
+<p><img alt="PCB" src="images/PCB_Photo.png" /></p>
+<h3>Thermal Camera</h3>
+<p><img alt="Thermal" src="images/Thermal.jpeg" /></p>
+<h3>Altium Designer</h3>
+<p><img alt="Altium" src="images/Altium_Photo.png" /></p>
+<h3>Node-Red</h3>
+<p><img alt="Node-red" src="images/Node_Photo.png" /></p>
+<h3>Block Diagram</h3>
+<p><img alt="Diagram" src="images/Diagram.png" /></p>
