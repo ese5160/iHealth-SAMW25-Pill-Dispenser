@@ -1,12 +1,10 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/kzkUPShx)
+# iHealth - SAMW25 Based Pill Dispenser
 
-# a14g-final-submission
-
-    * Team Number: 11
     * Team Name: iHealth
     * Team Members: Zed Liu, Jiazhen Zhang
-    * Github Repository URL:
     * Description of test hardware: laptop, Project Prototype
+
+![PCB](images/PCB_Photo.png)
 
 ## 1. Video Presentation
 
